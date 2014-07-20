@@ -6,29 +6,21 @@
 
 package edu.wpi.first.wpilibj.templates.subsystems;
 
-
-import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.templates.commands.Extend;
-import edu.wpi.first.wpilibj.templates.RobotMap;
-
+import edu.wpi.first.wpilibj.templates.commands.ExampleCommand;
 
 /**
  *
  * @author Nicster34
  */
-public class ExtendArm extends Subsystem {
-    Victor extendArmed = new Victor(RobotMap.rightMotor);
-    public ExtendArm(){
-        
-    }
-            
+public class Claw extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
-        setDefaultCommand(new Extend());
+        setDefaultCommand(new ExampleCommand());
+        
     }
-    public void upDown(double move) {
-        extendArmed.set(move);
+    
+    public void clawOpen (){
+        
     }
 }
-

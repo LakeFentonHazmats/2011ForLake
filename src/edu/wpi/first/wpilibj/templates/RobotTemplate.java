@@ -8,6 +8,7 @@
 package edu.wpi.first.wpilibj.templates;
 
 
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -25,6 +26,7 @@ import edu.wpi.first.wpilibj.templates.commands.ExampleCommand;
 public class RobotTemplate extends IterativeRobot {
 
     Command autonomousCommand;
+    Compressor comPress;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -33,6 +35,8 @@ public class RobotTemplate extends IterativeRobot {
     public void robotInit() {
         // instantiate the command used for the autonomous period
         autonomousCommand = new ExampleCommand();
+         comPress = new Compressor(1,1); 
+
 
         // Initialize all subsystems
         CommandBase.init();
@@ -48,6 +52,7 @@ public class RobotTemplate extends IterativeRobot {
      */
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
+        comPress.start();
     }
 
     public void teleopInit() {
@@ -63,6 +68,7 @@ public class RobotTemplate extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        comPress.start();
     }
     
     /**
