@@ -1,12 +1,9 @@
 
 package edu.wpi.first.wpilibj.templates;
 
-import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import edu.wpi.first.wpilibj.templates.commands.Extend;
 import edu.wpi.first.wpilibj.templates.commands.ClawOpen;
 import edu.wpi.first.wpilibj.templates.commands.ClawClose;
 
@@ -21,26 +18,36 @@ public class OI {
     // number it is.
     Joystick stick = new Joystick(1);
     Button aBut = new JoystickButton(stick, 1);
-    Button clawOpenBut = new JoystickButton(stick, 2);
-    Button clawCloseBut = new JoystickButton(stick, 3);
+    Button bBut = new JoystickButton(stick, 2);
+ 
             
     public OI() {
-    aBut.whenPressed(new Extend());
-    clawOpenBut.whileHeld(new ClawOpen());
-    clawCloseBut.whileHeld(new ClawClose());
+    aBut.whileHeld(new ClawClose());
+    bBut.whileHeld(new ClawOpen());
+    
     }
         
     
     
     // Button button = new JoystickButton(stick, buttonNumber);
-     public double getLeftSpeed() {
-        return stick.getY(GenericHID.Hand.kRight);
+     public double getXSpeed() {
+        return stick.getRawAxis(4);
        
     }
+     public double getYSpeed() {
+         return stick.getRawAxis(5);
+     }
     
     public double getRotation() {
-        return stick.getX(GenericHID.Hand.kLeft);
+        return stick.getRawAxis(3);
     }
+    public double getExtend() {
+        return stick.getRawAxis(2);
+    }
+    public double getRaise() {
+        return stick.getRawAxis(1);
+    }
+    
     
     // Another type of button you can create is a DigitalIOButton, which is
     // a button or switch hooked up to the cypress module. These are useful if

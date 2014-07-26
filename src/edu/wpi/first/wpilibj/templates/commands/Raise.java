@@ -25,7 +25,7 @@ public class Raise extends CommandBase{
      * Have the drivetrain drive tank drive with the latest values from joysticks.
      */
     protected void execute() {
-        upDownArm.upDown(oi.getLeftSpeed());
+        upDownArm.upDown(oi.getRaise());
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -6,16 +6,16 @@
 
 package edu.wpi.first.wpilibj.templates.commands;
 
-import edu.wpi.first.wpilibj.templates.subsystems.Claw;
+
 
 /**
  *
  * @author Nicster34
  */
-public class ClawClose extends CommandBase{
-    Claw claw = new Claw();
-    public ClawClose() {
-        requires(claw);
+public class DriveWithController extends CommandBase{
+     public DriveWithController() {
+        // Use requires() here to declare subsystem dependencies
+        requires(driveTrain);
     }
 
     // Called just before this Command runs the first time
@@ -23,18 +23,11 @@ public class ClawClose extends CommandBase{
     }
 
     // Called repeatedly when this Command is scheduled to run
-    /**
-     * Have the drivetrain drive tank drive with the latest values from joysticks.
-     */
     protected void execute() {
-        claw.clawClose();
+        driveTrain.mecanumDrive(oi.getXSpeed(), oi.getYSpeed(), oi.getRotation(), 0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
-    /**
-     * @return false, so that it executes forever or until another command
-     *         interrupts it.
-     */
     protected boolean isFinished() {
         return false;
     }
@@ -46,8 +39,6 @@ public class ClawClose extends CommandBase{
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-        claw.clawStop();
     }
-    
     
 }

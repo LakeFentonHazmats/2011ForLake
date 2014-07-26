@@ -24,7 +24,7 @@ public class Extend extends CommandBase{
      * Have the drivetrain drive tank drive with the latest values from joysticks.
      */
     protected void execute() {
-        extendArm.upDown(oi.getRotation());
+        extendArm.upDown(oi.getExtend());
     }
 
     // Make this return true when this Command no longer needs to run execute()
