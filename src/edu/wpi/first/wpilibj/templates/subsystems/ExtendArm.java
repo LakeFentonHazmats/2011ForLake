@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
  * @author Nicster34
  */
 public class ExtendArm extends Subsystem {
-    Victor extendArmed = new Victor(RobotMap.rightMotor);
+    Victor extendArmed = new Victor(RobotMap.extendMotor);
     public ExtendArm(){
         
     }

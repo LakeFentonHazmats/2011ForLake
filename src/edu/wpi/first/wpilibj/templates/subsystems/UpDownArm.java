@@ -16,7 +16,7 @@ import edu.wpi.first.wpilibj.Compressor;
  * @author Nicster34
  */
 public class UpDownArm extends Subsystem {
-   Victor upDownArmed = new Victor(RobotMap.leftMotor);
+   Victor upDownArmed = new Victor(RobotMap.raiseMotor);
     public UpDownArm(){
         
     }
