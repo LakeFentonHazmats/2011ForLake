@@ -13,7 +13,6 @@ import edu.wpi.first.wpilibj.templates.subsystems.Claw;
  * @author Nicster34
  */
 public class ClawOpen extends CommandBase{
-    Claw claw = new Claw();
     public ClawOpen() {
         requires(claw);
     }
