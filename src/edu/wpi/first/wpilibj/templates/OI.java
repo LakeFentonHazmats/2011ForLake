@@ -7,6 +7,8 @@ import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.templates.commands.Extend;
+import edu.wpi.first.wpilibj.templates.commands.ClawOpen;
+import edu.wpi.first.wpilibj.templates.commands.ClawClose;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -19,9 +21,13 @@ public class OI {
     // number it is.
     Joystick stick = new Joystick(1);
     Button aBut = new JoystickButton(stick, 1);
-    
+    Button clawOpenBut = new JoystickButton(stick, 2);
+    Button clawCloseBut = new JoystickButton(stick, 3);
+            
     public OI() {
     aBut.whenPressed(new Extend());
+    clawOpenBut.whileHeld(new ClawOpen());
+    clawCloseBut.whileHeld(new ClawClose());
     }
         
     

@@ -8,12 +8,17 @@ package edu.wpi.first.wpilibj.templates.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.commands.ExampleCommand;
+import edu.wpi.first.wpilibj.templates.RobotMap;
+import edu.wpi.first.wpilibj.PWM;
 
 /**
  *
  * @author Nicster34
  */
 public class Claw extends Subsystem {
+    PWM clawMotor = new PWM(RobotMap.clawMotor);
+    
+    
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         setDefaultCommand(new ExampleCommand());
@@ -21,6 +26,14 @@ public class Claw extends Subsystem {
     }
     
     public void clawOpen (){
-        
+        clawMotor.setRaw(-1);
+    }
+    
+    public void clawClose (){
+        clawMotor.setRaw(1);
+    }
+    
+    public void clawStop (){
+        clawMotor.setRaw(0);
     }
 }

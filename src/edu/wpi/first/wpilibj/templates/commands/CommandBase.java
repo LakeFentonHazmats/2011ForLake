@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.templates.OI;
 import edu.wpi.first.wpilibj.templates.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj.templates.subsystems.ExtendArm;
 import edu.wpi.first.wpilibj.templates.subsystems.UpDownArm;
+import edu.wpi.first.wpilibj.templates.subsystems.Claw;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -20,6 +21,7 @@ public abstract class CommandBase extends Command {
     public static ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
     public static ExtendArm extendArm = new ExtendArm();
     public static UpDownArm upDownArm = new UpDownArm();
+    public static Claw claw = new Claw();
 
     public static void init() {
         // This MUST be here. If the OI creates Commands (which it very likely
